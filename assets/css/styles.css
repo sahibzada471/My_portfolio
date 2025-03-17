@@ -320,6 +320,118 @@ img {
   color: var(--color);
 }
 
+/*===== SERVICES SECTION =====*/
+.services__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for better spacing */
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+
+/*===== SERVICE CARD =====*/
+.services__card {
+  background: rgba(255, 255, 255, 0.1); /* Glass effect */
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.services__card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/*===== ICON STYLING =====*/
+.services__icon {
+  font-size: 3.5rem;
+  color: #ffcc00; /* Gold color */
+  margin-bottom: 1rem;
+  transition: color 0.3s ease-in-out, transform 0.3s;
+}
+
+/* Icon glow effect on hover */
+.services__card:hover .services__icon {
+  color: #ff6600; /* Orange */
+  transform: rotate(10deg) scale(1.2);
+}
+
+/*===== SERVICE TITLE =====*/
+.services__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #7719e4;
+}
+
+/*===== SERVICE DESCRIPTION =====*/
+.services__description {
+  font-size: 0.95rem;
+  color: #180606;
+  line-height: 1.6;
+}
+
+/*===== RESPONSIVE DESIGN =====*/
+
+/* Tablet */
+@media (max-width: 768px) {
+  .services__container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .services__card {
+    padding: 1.8rem;
+  }
+
+  .services__icon {
+    font-size: 3rem;
+  }
+
+  .services__title {
+    font-size: 1.2rem;
+  }
+
+  .services__description {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .services__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .services__card {
+    padding: 1.5rem;
+  }
+
+  .services__icon {
+    font-size: 2.5rem;
+  }
+
+  .services__title {
+    font-size: 1.1rem;
+  }
+
+  .services__description {
+    font-size: 0.8rem;
+  }
+}
+
 
 /* ===== Portfolio ===== */
 .work__item {
