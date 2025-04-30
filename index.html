@@ -296,14 +296,45 @@
             
                 <div class="contact__container bd-grid">
                     <div class="contact__card">
-                        <form action="" class="contact__form">
-                            <input type="text" placeholder="Name" class="contact__input">
-                            <input type="email" placeholder="Email" class="contact__input">
-                            <textarea placeholder="Message" cols="0" rows="5" class="contact__input"></textarea>
-                            <input type="button" value="Send" class="contact__button button">
+                        <form id="contactForm" class="contact__form">
+                            <input type="hidden" name="access_key" value="98944057-1a1b-480c-a940-456f0ec590af">
+                            
+                            <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                            <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                            <textarea name="message" placeholder="Message" cols="0" rows="5" class="contact__input" required></textarea>
+                            <button type="submit" class="contact__button button">Send</button>
                         </form>
                     </div>
                 </div>
+                
+                <script>
+                    const form = document.getElementById('contactForm');
+                    
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        // Get form data
+                        const formData = new FormData(form);
+                        
+                        // Send data to Web3Forms
+                        fetch('https://api.web3forms.com/submit', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Message sent successfully!');
+                                form.reset();
+                            } else {
+                                alert('Error sending message: ' + data.message);
+                            }
+                        })
+                        .catch(error => {
+                            alert('Error: ' + error);
+                        });
+                    });
+                </script>
             </section>
         </main>
 
@@ -336,5 +367,6 @@
 
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
+        <!-- <script src="script.js"></script> -->
     </body>
 </html>
