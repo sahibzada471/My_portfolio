@@ -12,6 +12,50 @@
         <title>Portfolio website complete</title>
     </head>
     <body>
+         <!-- Welcome Page -->
+         <div class="welcome-page" id="welcomePage">
+            <div class="welcome-content">
+                <h1 class="welcome-title">Welcome to My Portfolio</h1>
+                <p class="welcome-subtitle">Discover my work and skills</p>
+                <button class="enter-button" id="enterButton">
+                    Enter Portfolio
+                    <i class='bx bx-chevron-right'></i>
+                </button>
+            </div>
+            
+        </div>
+        
+        <script>
+           document.addEventListener('DOMContentLoaded', function() {
+  const welcomePage = document.getElementById('welcomePage');
+  const enterButton = document.getElementById('enterButton');
+  const portfolioContent = document.getElementById('portfolioContent');
+  const body = document.body;
+
+  // Optional: Auto-close after 5 seconds (comment if not needed)
+  const autoCloseTimer = setTimeout(function() {
+    closeWelcomePage();
+  }, 5000);
+
+  enterButton.addEventListener('click', function() {
+    clearTimeout(autoCloseTimer); // Clear the auto-close timer if button is clicked
+    closeWelcomePage();
+  });
+
+  function closeWelcomePage() {
+    // Hide welcome page
+    welcomePage.classList.add('hidden');
+    
+    // Remove welcome-active class to restore scrolling
+    body.classList.remove('welcome-active');
+    
+    // Show portfolio content after a delay to allow animation to complete
+    setTimeout(function() {
+      portfolioContent.classList.add('active');
+    }, 500);
+  }
+});
+        </script>
         <!--===== HEADER =====-->
         <header class="l-header">
             <nav class="nav bd-grid">
@@ -88,117 +132,153 @@
 
             <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
-            
-                <div class="skills__container">
-                    <div class="skills__card">
-                        <div class="progress-circle" style="--percentage: 95; --color: #42A5F5;">
-                            <svg>
-                                <circle class="bg" cx="50" cy="50" r="45"></circle>
-                                <circle class="progress" cx="50" cy="50" r="45"></circle>
-                            </svg>
-                            <div class="progress-value">95%</div>
+                <h2 class="section-title">My Skills</h2>
+                <div class="skills-container">
+                    <div class="skills-track">
+                        <!-- First Set -->
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 95; --color: #42A5F5;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">95%</div>
+                            </div>
+                            <span class="skill-name">Flutter</span>
                         </div>
-                        <span class="skill-name">Flutter</span>
-                    </div>
             
-                    <div class="skills__card">
-                        <div class="progress-circle" style="--percentage: 90; --color: #FFCA28;">
-                            <svg>
-                                <circle class="bg" cx="50" cy="50" r="45"></circle>
-                                <circle class="progress" cx="50" cy="50" r="45"></circle>
-                            </svg>
-                            <div class="progress-value">90%</div>
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 90; --color: #FFCA28;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">90%</div>
+                            </div>
+                            <span class="skill-name">Firebase</span>
                         </div>
-                        <span class="skill-name">Firebase</span>
-                    </div>
             
-                    <div class="skills__card">
-                        <div class="progress-circle" style="--percentage: 85; --color: #26C6DA;">
-                            <svg>
-                                <circle class="bg" cx="50" cy="50" r="45"></circle>
-                                <circle class="progress" cx="50" cy="50" r="45"></circle>
-                            </svg>
-                            <div class="progress-value">85%</div>
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 85; --color: #26C6DA;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">85%</div>
+                            </div>
+                            <span class="skill-name">API Integration</span>
                         </div>
-                        <span class="skill-name">API Integration</span>
-                    </div>
             
-                    <div class="skills__card">
-                        <div class="progress-circle" style="--percentage: 80; --color: #68A063;">
-                            <svg>
-                                <circle class="bg" cx="50" cy="50" r="45"></circle>
-                                <circle class="progress" cx="50" cy="50" r="45"></circle>
-                            </svg>
-                            <div class="progress-value">80%</div>
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 80; --color: #68A063;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">80%</div>
+                            </div>
+                            <span class="skill-name">Node.js</span>
                         </div>
-                        <span class="skill-name">Node.js</span>
-                    </div>
             
-                    <div class="skills__card">
-                        <div class="progress-circle" style="--percentage: 75; --color: #4DB33D;">
-                            <svg>
-                                <circle class="bg" cx="50" cy="50" r="45"></circle>
-                                <circle class="progress" cx="50" cy="50" r="45"></circle>
-                            </svg>
-                            <div class="progress-value">75%</div>
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 75; --color: #4DB33D;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">75%</div>
+                            </div>
+                            <span class="skill-name">MongoDB</span>
                         </div>
-                        <span class="skill-name">MongoDB</span>
-                    </div>
             
-                    <div class="skills__card">
-                        <div class="progress-circle" style="--percentage: 80; --color: #7377AD;">
-                            <svg>
-                                <circle class="bg" cx="50" cy="50" r="45"></circle>
-                                <circle class="progress" cx="50" cy="50" r="45"></circle>
-                            </svg>
-                            <div class="progress-value">80%</div>
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 80; --color: #7377AD;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">80%</div>
+                            </div>
+                            <span class="skill-name">PHP</span>
                         </div>
-                        <span class="skill-name">PHP</span>
-                    </div>
             
-                    <div class="skills__card">
-                        <div class="progress-circle" style="--percentage: 85; --color: #F89820;">
-                            <svg>
-                                <circle class="bg" cx="50" cy="50" r="45"></circle>
-                                <circle class="progress" cx="50" cy="50" r="45"></circle>
-                            </svg>
-                            <div class="progress-value">85%</div>
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 80; --color: #F89820;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">85%</div>
+                            </div>
+                            <span class="skill-name">MYSQL</span>
                         </div>
-                        <span class="skill-name">Java</span>
-                    </div>
             
-                    <div class="skills__card">
-                        <div class="progress-circle" style="--percentage: 90; --color: #E44D26;">
-                            <svg>
-                                <circle class="bg" cx="50" cy="50" r="45"></circle>
-                                <circle class="progress" cx="50" cy="50" r="45"></circle>
-                            </svg>
-                            <div class="progress-value">100%</div>
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 100; --color: #E44D26;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">100%</div>
+                            </div>
+                            <span class="skill-name">HTML</span>
                         </div>
-                        <span class="skill-name">HTML</span>
-                    </div>
             
-                    <div class="skills__card">
-                        <div class="progress-circle" style="--percentage: 85; --color: #264DE4;">
-                            <svg>
-                                <circle class="bg" cx="50" cy="50" r="45"></circle>
-                                <circle class="progress" cx="50" cy="50" r="45"></circle>
-                            </svg>
-                            <div class="progress-value">100%</div>
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 100; --color: #264DE4;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">100%</div>
+                            </div>
+                            <span class="skill-name">CSS</span>
                         </div>
-                        <span class="skill-name">CSS</span>
-                    </div>
             
-                    <div class="skills__card">
-                        <div class="progress-circle" style="--percentage: 80; --color: #F7DF1E;">
-                            <svg>
-                                <circle class="bg" cx="50" cy="50" r="45"></circle>
-                                <circle class="progress" cx="50" cy="50" r="45"></circle>
-                            </svg>
-                            <div class="progress-value">80%</div>
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 80; --color: #F7DF1E;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">80%</div>
+                            </div>
+                            <span class="skill-name">JavaScript</span>
                         </div>
-                        <span class="skill-name">JavaScript</span>
+            
+                        <!-- Duplicated Set for Infinite Effect -->
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 95; --color: #42A5F5;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">95%</div>
+                            </div>
+                            <span class="skill-name">Flutter</span>
+                        </div>
+            
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 90; --color: #FFCA28;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">90%</div>
+                            </div>
+                            <span class="skill-name">Firebase</span>
+                        </div>
+            
+                        <div class="skill-card">
+                            <div class="progress-circle" style="--percentage: 85; --color: #26C6DA;">
+                                <svg>
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <div class="progress-value">85%</div>
+                            </div>
+                            <span class="skill-name">API Integration</span>
+                        </div>
                     </div>
                 </div>
             </section>
